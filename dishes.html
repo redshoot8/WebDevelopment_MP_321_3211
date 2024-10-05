@@ -9,9 +9,12 @@
     <!-- Подключаем шрифт с Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <!-- Подключаем внешний файл стилей -->
+    <!-- Подключаем внешние файлы стилей -->
     <link rel="stylesheet" href="styles/main_styles.css">
     <link rel="stylesheet" href="styles/dishes_styles.css">
+
+    <!-- Подключаем скрипты -->
+    <script src="scripts_js/dishes.js"></script>
 </head>
 <body>
     <header>
@@ -28,84 +31,17 @@
     <main>
         <section id="soup">
             <h2>Выберите суп</h2>
-            <div class="dish_block">
-                <div class="dish">
-
-                    <img src="https://avatars.mds.yandex.net/i?id=fd389a6a552ef0ce710ca92934b58ffc_l-10518571-images-thumbs&n=13" alt="Суп 1">
-                    <p class="price">195₽</p>
-                    <p class="dish_name">Гаспачо</p>
-                    <p class="volume">350 г</p>
-                    <div><button>Добавить</button></div>
-                </div>
-                <div class="dish">
-                    <img src="https://avatars.mds.yandex.net/i?id=061f56b46f932ba85f52afa5a7cb7d96e9d95b96-5225414-images-thumbs&n=13" alt="Суп 2">
-                    <p class="price">185₽</p>
-                    <p class="dish_name">Мясная солянка</p>
-                    <p class="volume">330 г</p>
-                    <div><button>Добавить</button></div>
-                </div>
-                <div class="dish">
-                    <img src="https://fb.ru/misc/i/gallery/14518/3268124.jpg" alt="Суп 3">
-                    <p class="price">270₽</p>
-                    <p class="dish_name">Норвежский суп</p>
-                    <p class="volume">330 г</p>
-                    <div><button>Добавить</button></div>
-                </div>
-            </div>
+            <div class="dish_block"></div>
         </section>
+
         <section id="main_dish">
             <h2>Выберите главное блюдо</h2>
-            <div class="dish_block">
-                <div class="dish">
-
-                    <img src="https://static-actual-production.chibbis.ru/86e354c4500cdf526d92eaf09dd09eb8.jpeg" alt="Суп 1">
-                    <p class="price">200₽</p>
-                    <p class="dish_name">Удон с курицей</p>
-                    <p class="volume">400 г</p>
-                    <div><button>Добавить</button></div>
-                </div>
-                <div class="dish">
-                    <img src="https://avatars.mds.yandex.net/i?id=a9d7612daec77277160be07038f73814_l-9225702-images-thumbs&n=13" alt="Суп 2">
-                    <p class="price">210₽</p>
-                    <p class="dish_name">Паста песто</p>
-                    <p class="volume">450 г</p>
-                    <div><button>Добавить</button></div>
-                </div>
-                <div class="dish">
-                    <img src="https://avatars.mds.yandex.net/i?id=50626fdd39affb52ffec19fadde1e8dd_sr-2417823-images-thumbs&n=13" alt="Суп 3">
-                    <p class="price">190₽</p>
-                    <p class="dish_name">Рис с морепродуктами</p>
-                    <p class="volume">390 г</p>
-                    <div><button>Добавить</button></div>
-                </div>
-            </div>
+            <div class="dish_block"></div>
         </section>
-        <section id ="drink">
-            <h2>Выберите напиток</h2>
-            <div class="dish_block">
-                <div class="dish">
 
-                    <img src="https://cdn.7days.ru/pic/289/875394/359607/90.jpg" alt="Суп 1">
-                    <p class="price">100₽</p>
-                    <p class="dish_name">Киви-коктейль</p>
-                    <p class="volume">300 мл</p>
-                    <div><button>Добавить</button></div>
-                </div>
-                <div class="dish">
-                    <img src="https://avatars.mds.yandex.net/i?id=aad48ad39aaf4cbcfcd3d7df1ac88572_l-4442687-images-thumbs&n=13" alt="Суп 2">
-                    <p class="price">150₽</p>
-                    <p class="dish_name">Вишневый коктейль</p>
-                    <p class="volume">400 мл</p>
-                    <div><button>Добавить</button></div>
-                </div>
-                <div class="dish">
-                    <img src="https://avatars.mds.yandex.net/i?id=a0e3b5dfd44bd6e9fe475788d3db84be_l-9212030-images-thumbs&n=13" alt="Суп 3">
-                    <p class="price">125₽</p>
-                    <p class="dish_name">Коктейль из драконьего фрукта</p>
-                    <p class="volume">350 мл</p>
-                    <div><button>Добавить</button></div>
-                </div>
-            </div>
+        <section id="drink">
+            <h2>Выберите напиток</h2>
+            <div class="dish_block"></div>
         </section>
 
         <section id="order_form">
@@ -113,30 +49,18 @@
             <form class="order_form" action="https://httpbin.org/post" method="POST">
                 <div class="order_section">
                     <p>Ваш заказ</p>
+                    <p>Ничего не выбрано</p>
 
-                    <label for="order_soup">Суп</label>
-                    <select id="order_soup">
-                        <option>-- Выберите суп --</option>
-                        <option>Гаспачо</option>
-                        <option>Мясная солянка</option>
-                        <option>Норвежский суп</option>
-                    </select>
+                    <p id="soup_label"><b>Суп</b></p>
+                    <p id="chosen_soup">Блюдо не выбрано</p>
 
-                    <label for="order_main_dish">Главное блюдо</label>
-                    <select id="order_main_dish">
-                        <option>-- Выберите главное блюдо --</option>
-                        <option>Удон с курицей</option>
-                        <option>Паста песто</option>
-                        <option>Рис с морепродуктами</option>
-                    </select>
+                    <p id="main_label"><b>Главное блюдо</b></p>
+                    <p id="chosen_main">Блюдо не выбрано</p>
 
-                    <label for="order_drink">Напиток</label>
-                    <select id="order_drink">
-                        <option>-- Выберите напиток --</option>
-                        <option>Киви коктейль</option>
-                        <option>Вишневый коктейль</option>
-                        <option>Коктейль из драконьего фрукта</option>
-                    </select>
+                    <p id="drink_label"><b>Напиток</b></p>
+                    <p id="chosen_drink">Блюдо не выбрано</p>
+
+                    <p id="total_price">Стоимость заказа: 0₽</p>
 
                     <label for="comments">Комментарии к заказу</label>
                     <textarea id="comments" rows="8"></textarea>

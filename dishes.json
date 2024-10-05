@@ -1,0 +1,76 @@
+{
+  "dishes": [
+    {
+      "keyword": "gazpacho",
+      "name": "Гаспачо",
+      "price": 195,
+      "category": "суп",
+      "volume": "350 г",
+      "image": "https://avatars.mds.yandex.net/i?id=fd389a6a552ef0ce710ca92934b58ffc_l-10518571-images-thumbs&n=13"
+    },
+    {
+      "keyword": "solyanka",
+      "name": "Мясная солянка",
+      "price": 185,
+      "category": "суп",
+      "volume": "330 г",
+      "image": "https://avatars.mds.yandex.net/i?id=061f56b46f932ba85f52afa5a7cb7d96e9d95b96-5225414-images-thumbs&n=13"
+    },
+    {
+      "keyword": "norwegian",
+      "name": "Норвежский суп",
+      "price": 270,
+      "category": "суп",
+      "volume": "330 г",
+      "image": "https://fb.ru/misc/i/gallery/14518/3268124.jpg"
+    },
+    {
+      "keyword": "udon",
+      "name": "Удон с курицей",
+      "price": 200,
+      "category": "главное блюдо",
+      "volume": "400 г",
+      "image": "https://static-actual-production.chibbis.ru/86e354c4500cdf526d92eaf09dd09eb8.jpeg"
+    },
+    {
+      "keyword": "pesto",
+      "name": "Паста песто",
+      "price": 210,
+      "category": "главное блюдо",
+      "volume": "450 г",
+      "image": "https://avatars.mds.yandex.net/i?id=a9d7612daec77277160be07038f73814_l-9225702-images-thumbs&n=13"
+    },
+    {
+      "keyword": "rice",
+      "name": "Рис с морепродуктами",
+      "price": 190,
+      "category": "главное блюдо",
+      "volume": "390 г",
+      "image": "https://avatars.mds.yandex.net/i?id=50626fdd39affb52ffec19fadde1e8dd_sr-2417823-images-thumbs&n=13"
+    },
+    {
+      "keyword": "kiwi",
+      "name": "Киви-коктейль",
+      "price": 100,
+      "category": "напиток",
+      "volume": "300 мл",
+      "image": "https://cdn.7days.ru/pic/289/875394/359607/90.jpg"
+    },
+    {
+      "keyword": "cherry",
+      "name": "Вишневый коктейль",
+      "price": 150,
+      "category": "напиток",
+      "volume": "400 мл",
+      "image": "https://avatars.mds.yandex.net/i?id=aad48ad39aaf4cbcfcd3d7df1ac88572_l-4442687-images-thumbs&n=13"
+    },
+    {
+      "keyword": "dragon",
+      "name": "Коктейль из драконьего фрукта",
+      "price": 125,
+      "category": "напиток",
+      "volume": "350 мл",
+      "image": "https://avatars.mds.yandex.net/i?id=a0e3b5dfd44bd6e9fe475788d3db84be_l-9212030-images-thumbs&n=13"
+    }
+  ]
+}
