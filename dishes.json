@@ -1,76 +1,274 @@
 {
-  "dishes": [
-    {
-      "keyword": "gazpacho",
-      "name": "Гаспачо",
-      "price": 195,
-      "category": "суп",
-      "volume": "350 г",
-      "image": "https://avatars.mds.yandex.net/i?id=fd389a6a552ef0ce710ca92934b58ffc_l-10518571-images-thumbs&n=13"
-    },
-    {
-      "keyword": "solyanka",
-      "name": "Мясная солянка",
-      "price": 185,
-      "category": "суп",
-      "volume": "330 г",
-      "image": "https://avatars.mds.yandex.net/i?id=061f56b46f932ba85f52afa5a7cb7d96e9d95b96-5225414-images-thumbs&n=13"
-    },
-    {
-      "keyword": "norwegian",
-      "name": "Норвежский суп",
-      "price": 270,
-      "category": "суп",
-      "volume": "330 г",
-      "image": "https://fb.ru/misc/i/gallery/14518/3268124.jpg"
-    },
-    {
-      "keyword": "udon",
-      "name": "Удон с курицей",
-      "price": 200,
-      "category": "главное блюдо",
-      "volume": "400 г",
-      "image": "https://static-actual-production.chibbis.ru/86e354c4500cdf526d92eaf09dd09eb8.jpeg"
-    },
-    {
-      "keyword": "pesto",
-      "name": "Паста песто",
-      "price": 210,
-      "category": "главное блюдо",
-      "volume": "450 г",
-      "image": "https://avatars.mds.yandex.net/i?id=a9d7612daec77277160be07038f73814_l-9225702-images-thumbs&n=13"
-    },
-    {
-      "keyword": "rice",
-      "name": "Рис с морепродуктами",
-      "price": 190,
-      "category": "главное блюдо",
-      "volume": "390 г",
-      "image": "https://avatars.mds.yandex.net/i?id=50626fdd39affb52ffec19fadde1e8dd_sr-2417823-images-thumbs&n=13"
-    },
-    {
-      "keyword": "kiwi",
-      "name": "Киви-коктейль",
-      "price": 100,
-      "category": "напиток",
-      "volume": "300 мл",
-      "image": "https://cdn.7days.ru/pic/289/875394/359607/90.jpg"
-    },
-    {
-      "keyword": "cherry",
-      "name": "Вишневый коктейль",
-      "price": 150,
-      "category": "напиток",
-      "volume": "400 мл",
-      "image": "https://avatars.mds.yandex.net/i?id=aad48ad39aaf4cbcfcd3d7df1ac88572_l-4442687-images-thumbs&n=13"
-    },
-    {
-      "keyword": "dragon",
-      "name": "Коктейль из драконьего фрукта",
-      "price": 125,
-      "category": "напиток",
-      "volume": "350 мл",
-      "image": "https://avatars.mds.yandex.net/i?id=a0e3b5dfd44bd6e9fe475788d3db84be_l-9212030-images-thumbs&n=13"
-    }
-  ]
+    "dishes": [
+        {
+            "keyword": "gazpacho",
+            "name": "Гаспачо",
+            "price": 195,
+            "category": "суп",
+            "volume": "350 г",
+            "image": "https://avatars.mds.yandex.net/i?id=fd389a6a552ef0ce710ca92934b58ffc_l-10518571-images-thumbs&n=13",
+            "kind": "veg"
+        },
+        {
+            "keyword": "solyanka",
+            "name": "Мясная солянка",
+            "price": 185,
+            "category": "суп",
+            "volume": "330 г",
+            "image": "https://avatars.mds.yandex.net/i?id=061f56b46f932ba85f52afa5a7cb7d96e9d95b96-5225414-images-thumbs&n=13",
+            "kind": "meat"
+        },
+        {
+            "keyword": "norwegian",
+            "name": "Норвежский суп",
+            "price": 270,
+            "category": "суп",
+            "volume": "330 г",
+            "image": "https://fb.ru/misc/i/gallery/14518/3268124.jpg",
+            "kind": "fish"
+        },
+        {
+            "keyword": "tomato",
+            "name": "Томатный суп с рисом",
+            "price": 200,
+            "category": "суп",
+            "volume": "300 г",
+            "image": "https://food-market.ro/wp-content/uploads/2021/06/Ciorba-de-Rosii-cu-Orez-1.jpg",
+            "kind": "veg"
+        },
+        {
+            "keyword": "deer",
+            "name": "Суп из лосятины",
+            "price": 290,
+            "category": "суп",
+            "volume": "350 г",
+            "image": "https://i.pinimg.com/736x/31/08/70/3108704c6e20f094709b63d9c9fa9494.jpg",
+            "kind": "meat"
+        },
+        {
+            "keyword": "uha",
+            "name": "Уха",
+            "price": 250,
+            "category": "суп",
+            "volume": "315 г",
+            "image": "https://xenical.ru/wp-content/uploads/2023/10/s-kakoj-krupoj-varyat-uhu-3-recepta-rybnogo-supa.jpg",
+            "kind": "fish"
+        },
+        {
+            "keyword": "udon",
+            "name": "Удон с курицей",
+            "price": 200,
+            "category": "главное блюдо",
+            "volume": "400 г",
+            "image": "https://static-actual-production.chibbis.ru/86e354c4500cdf526d92eaf09dd09eb8.jpeg",
+            "kind": "meat"
+        },
+        {
+            "keyword": "pesto",
+            "name": "Паста песто",
+            "price": 210,
+            "category": "главное блюдо",
+            "volume": "450 г",
+            "image": "https://avatars.mds.yandex.net/i?id=a9d7612daec77277160be07038f73814_l-9225702-images-thumbs&n=13",
+            "kind": "veg"
+        },
+        {
+            "keyword": "rice",
+            "name": "Рис с морепродуктами",
+            "price": 190,
+            "category": "главное блюдо",
+            "volume": "390 г",
+            "image": "https://avatars.mds.yandex.net/i?id=50626fdd39affb52ffec19fadde1e8dd_sr-2417823-images-thumbs&n=13",
+            "kind": "fish"
+        },
+        {
+            "keyword": "pig",
+            "name": "Свиные ребра",
+            "price": 250,
+            "category": "главное блюдо",
+            "volume": "370 г",
+            "image": "https://avatars.mds.yandex.net/i?id=a74db8d8add0dfc38125545cfb7d76fda7d1dd59-9842828-images-thumbs&n=13",
+            "kind": "meat"
+        },
+        {
+            "keyword": "ratatouille",
+            "name": "Рататуй",
+            "price": 180,
+            "category": "главное блюдо",
+            "volume": "250 г",
+            "image": "https://avatars.mds.yandex.net/i?id=1ef4997f48ecf5fe4c41fbffde9bcfdab6381411-4987697-images-thumbs&n=13",
+            "kind": "veg"
+        },
+        {
+            "keyword": "salman",
+            "name": "Паста с лососем",
+            "price": 210,
+            "category": "главное блюдо",
+            "volume": "285 г",
+            "image": "https://avatars.mds.yandex.net/i?id=e0e77732a02243dc4130361e7dd3371690e06fb3-7543473-images-thumbs&n=13",
+            "kind": "fish"
+        },
+        {
+            "keyword": "kiwi",
+            "name": "Киви-коктейль",
+            "price": 100,
+            "category": "напиток",
+            "volume": "300 мл",
+            "image": "https://cdn.7days.ru/pic/289/875394/359607/90.jpg",
+            "kind": "cold"
+        },
+        {
+            "keyword": "cherry",
+            "name": "Вишневый коктейль",
+            "price": 150,
+            "category": "напиток",
+            "volume": "400 мл",
+            "image": "https://avatars.mds.yandex.net/i?id=aad48ad39aaf4cbcfcd3d7df1ac88572_l-4442687-images-thumbs&n=13",
+            "kind": "cold"
+        },
+        {
+            "keyword": "dragon",
+            "name": "Коктейль из драконьего фрукта",
+            "price": 125,
+            "category": "напиток",
+            "volume": "350 мл",
+            "image": "https://avatars.mds.yandex.net/i?id=a0e3b5dfd44bd6e9fe475788d3db84be_l-9212030-images-thumbs&n=13",
+            "kind": "cold"
+        },
+        {
+            "keyword": "tea",
+            "name": "Чай черный",
+            "price": 100,
+            "category": "напиток",
+            "volume": "270 мл",
+            "image": "https://www.nifeislife.com/img/c/578.jpg",
+            "kind": "hot"
+        },
+        {
+            "keyword": "Latte",
+            "name": "Латте",
+            "price": 120,
+            "category": "напиток",
+            "volume": "310 мл",
+            "image": "https://c.pxhere.com/photos/eb/77/photo-314816.jpg!d",
+            "kind": "hot"
+        },
+        {
+            "keyword": "Cappuccino",
+            "name": "Капучино",
+            "price": 115,
+            "category": "напиток",
+            "volume": "320 мл",
+            "image": "https://avatars.mds.yandex.net/i?id=75503d39c04190f7ae0bfed69363e5c6_l-7570876-images-thumbs&n=13",
+            "kind": "hot"
+        },
+        {
+            "keyword": "greek",
+            "name": "Салат греческий",
+            "price": 180,
+            "category": "салат",
+            "volume": "250 г",
+            "image": "https://avatars.mds.yandex.net/i?id=f7bb9e50686a7e687c3d5c2b9105724a_l-5226501-images-thumbs&n=13",
+            "kind": "veg"
+        },
+        {
+            "keyword": "caesar",
+            "name": "Салат цезарь",
+            "price": 190,
+            "category": "салат",
+            "volume": "270 г",
+            "image": "https://avatars.mds.yandex.net/i?id=f7351c603fbbd7f949004e843bbee6e78f3c1fbb-10636720-images-thumbs&n=13",
+            "kind": "meat"
+        },
+        {
+            "keyword": "tuna",
+            "name": "Салат с тунцом",
+            "price": 175,
+            "category": "салат",
+            "volume": "260 г",
+            "image": "https://avatars.mds.yandex.net/i?id=7e8d2b936e411670a10ec003b2e55d513ad9eb8c-12154353-images-thumbs&n=13",
+            "kind": "fish"
+        },
+        {
+            "keyword": "vegetable",
+            "name": "Салат овощной",
+            "price": 160,
+            "category": "салат",
+            "volume": "230 г",
+            "image": "https://avatars.mds.yandex.net/i?id=ee6b8cc94b6e747ca922b45e70c73b5f41344fc1-11921588-images-thumbs&n=13",
+            "kind": "veg"
+        },
+        {
+            "keyword": "beijing",
+            "name": "Салат из пекинской капусты",
+            "price": 180,
+            "category": "салат",
+            "volume": "250 г",
+            "image": "https://avatars.mds.yandex.net/i?id=71a00746e351f52532f3644a66380b58bea18705-10675382-images-thumbs&n=13",
+            "kind": "veg"
+        },
+        {
+            "keyword": "beans",
+            "name": "Салат с пряной фасолью",
+            "price": 165,
+            "category": "салат",
+            "volume": "230 г",
+            "image": "https://avatars.mds.yandex.net/i?id=a7fdf6c70d3000871925e887023a48263ab9bb5b-5243206-images-thumbs&n=13",
+            "kind": "veg"
+        },
+        {
+            "keyword": "tiramisu",
+            "name": "Тирамису",
+            "price": 130,
+            "category": "десерт",
+            "volume": "170 г",
+            "image": "https://edaprof.ru/image/cache/catalog/zagustitel/stabilizator-dlya-krema-tiramisu-koncentrirovanyj/stabilizator-dlya-krema-tiramisu-koncentrirovanyj-4-min-700x700.jpg",
+            "kind": "small"
+        },
+        {
+            "keyword": "poncho",
+            "name": "Пончо",
+            "price": 300,
+            "category": "десерт",
+            "volume": "370 г",
+            "image": "https://u2.9111s.ru/uploads/202210/21/274ad8f068c4060532cd5847b102b33d.jpg",
+            "kind": "big"
+        },
+        {
+            "keyword": "apple",
+            "name": "Шарлотка с яблоками",
+            "price": 220,
+            "category": "десерт",
+            "volume": "280 г",
+            "image": "https://sun9-48.userapi.com/impg/-2V--2jPWcy8gy3iBr65Z66U7O_aivQuDjbfOw/KByGexZi_9Q.jpg?size=807x807&quality=96&sign=51e6c0054dab9ce59da37fd1c401c2bf&c_uniq_tag=7DMy2uejVtVjY91mWn6Jf2tmmcTkkyzdTxqIAQmeEzI&type=album",
+            "kind": "medium"
+        },
+        {
+            "keyword": "honeydew",
+            "name": "Медовик",
+            "price": 140,
+            "category": "десерт",
+            "volume": "180 г",
+            "image": "https://avatars.mds.yandex.net/i?id=0a12a52104ceceb1568738dc02157130ce2f3d0d-5879651-images-thumbs&n=13",
+            "kind": "small"
+        },
+        {
+            "keyword": "cherries",
+            "name": "Корзинка с вишней",
+            "price": 120,
+            "category": "десерт",
+            "volume": "110 г",
+            "image": "https://avatars.mds.yandex.net/i?id=958b46c41e25092cccb76065f49ca9e9_l-5248434-images-thumbs&n=13",
+            "kind": "small"
+        },
+        {
+            "keyword": "strudel",
+            "name": "Яблочный штрудель",
+            "price": 150,
+            "category": "десерт",
+            "volume": "170 г",
+            "image": "https://sun1-56.userapi.com/impg/1R8KYhnmirA-rLZBW5y63ojdBIR6jdjV1Z2iUw/MDE-AwmT5mw.jpg?crop=0.143,0,0.714,1&size=0x400&quality=95&sign=9f18ce51c757d405eb49a136c70a937a",
+            "kind": "small"
+        }
+    ]
 }

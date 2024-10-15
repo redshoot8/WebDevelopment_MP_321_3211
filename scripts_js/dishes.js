@@ -9,12 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Заполнение карточек блюд
             const soupSection = document.querySelectorAll('#soup .dish_block')[0];
-            const mainDishSection = document.querySelectorAll('#main_dish .dish_block')[0];
+            const mainDishSection = document.querySelectorAll('#main .dish_block')[0];
             const drinkSection = document.querySelectorAll('#drink .dish_block')[0];
+            const saladSection = document.querySelectorAll('#salad .dish_block')[0];
+            const dessertSection = document.querySelectorAll('#dessert .dish_block')[0];
 
             function createCard(dish) {
                 const card = document.createElement('div');
                 card.classList.add('dish');
+                card.dataset.kind = dish['kind'];
 
                 const img = document.createElement('img');
                 img.src = dish['image'];
@@ -63,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
             populateCards(soupSection, 'суп');
             populateCards(mainDishSection, 'главное блюдо');
             populateCards(drinkSection, 'напиток');
+            populateCards(saladSection, 'салат');
+            populateCards(dessertSection, 'десерт');
 
             // Добавление товаров в заказ и подсчет цены
             let totalPrice = 0;
@@ -71,15 +76,21 @@ document.addEventListener('DOMContentLoaded', () => {
             let selectedDishes = {
                 'суп': null,
                 'главное блюдо': null,
-                'напиток': null
+                'напиток': null,
+                'салат': null,
+                'десерт': null
             };
 
             const chosenSoup = document.getElementById('chosen_soup');
             const chosenMain = document.getElementById('chosen_main');
             const chosenDrink = document.getElementById('chosen_drink');
+            const chosenSalad = document.getElementById('chosen_salad');
+            const chosenDessert = document.getElementById('chosen_dessert');
             const soupLabel = document.getElementById('soup_label');
             const mainLabel = document.getElementById('main_label');
             const drinkLabel = document.getElementById('drink_label');
+            const saladLabel = document.getElementById('salad_label');
+            const dessertLabel = document.getElementById('dessert_label');
             const nothingSelectedMessage = document.querySelector('.order_section p:nth-of-type(2)');
 
             // Изначально элементы скрыты
@@ -89,6 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
             chosenMain.style.display = 'none';
             drinkLabel.style.display = 'none';
             chosenDrink.style.display = 'none';
+            saladLabel.style.display = 'none';
+            chosenSalad.style.display = 'none';
+            dessertLabel.style.display = 'none';
+            chosenDessert.style.display = 'none';
             totalPriceElement.style.display = 'none';
 
             function addToOrder(dish) {
@@ -102,6 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     isUpdated = true;
                 } else if (dish['category'] === 'напиток') {
                     updateCategory('напиток', dish, chosenDrink, drinkLabel);
+                    isUpdated = true;
+                } else if (dish['category'] === 'салат') {
+                    updateCategory('салат', dish, chosenSalad, saladLabel);
+                    isUpdated = true;
+                } else if (dish['category'] === 'десерт') {
+                    updateCategory('десерт', dish, chosenDessert, dessertLabel);
                     isUpdated = true;
                 }
 
@@ -148,6 +169,55 @@ document.addEventListener('DOMContentLoaded', () => {
                     drinkLabel.style.display = 'block';
                     chosenDrink.style.display = 'block';
                 }
+                if (selectedDishes['салат'] === null) {
+                    chosenSalad.textContent = 'Блюдо не выбрано';
+                    saladLabel.style.display = 'block';
+                    chosenSalad.style.display = 'block';
+                }
+                if (selectedDishes['десерт'] === null) {
+                    chosenDessert.textContent = 'Блюдо не выбрано';
+                    dessertLabel.style.display = 'block';
+                    chosenDessert.style.display = 'block';
+                }
             }
+
+            const soupFilters = document.querySelectorAll('.soup-filter');
+            const mainFilters = document.querySelectorAll('.main-filter');
+            const drinkFilters = document.querySelectorAll('.drink-filter');
+            const saladFilters = document.querySelectorAll('.salad-filter');
+            const dessertFilters = document.querySelectorAll('.dessert-filter');
+
+            function addFiltersToCategory(filters) {
+                filters.forEach(filter => {
+                    filter.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        const className = filter.classList[0].split('-')[0];
+                        const dishes = document.querySelectorAll(`#${className} .dish`);
+
+                        if (!filter.classList.contains('active')) {
+                            filters.forEach(f => f.classList.remove('active'));
+                            filter.classList.add('active');
+                            const kind = filter.dataset.kind;
+                            dishes.forEach(dish => {
+                                if (dish.dataset.kind === kind) {
+                                    dish.classList.remove('hidden');
+                                } else {
+                                    dish.classList.add('hidden');
+                                }
+                            });
+                        } else {
+                            filter.classList.remove('active');
+                            dishes.forEach(dish => dish.classList.remove('hidden'));
+                        }
+                    });
+                });
+            }
+
+            addFiltersToCategory(soupFilters);
+            addFiltersToCategory(mainFilters);
+            addFiltersToCategory(saladFilters);
+            addFiltersToCategory(drinkFilters);
+            addFiltersToCategory(dessertFilters);
         });
 });

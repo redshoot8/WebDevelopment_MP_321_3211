@@ -20,6 +20,26 @@
     border: 2px solid tomato;
 }
 
+.dish.hidden {
+    display: none;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters a {
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: green;
+    border-radius: 35px;
+}
+
+.filters .active {
+    background-color: rgba(144, 238, 144, 30);
+}
+
 button {
     width: 100%;
     background-color: #f1eee9;
