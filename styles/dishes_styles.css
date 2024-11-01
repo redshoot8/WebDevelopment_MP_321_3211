@@ -114,6 +114,10 @@ button {
     height: auto;
 }
 
+.combo-dish img:hover {
+    transform: scale(1.2) translateY(-10px);
+}
+
 .combo-dish p {
     margin-bottom: 0;
 }
@@ -175,10 +179,6 @@ textarea {
     border-radius: 4px;
 }
 
-textarea {
-    width: 95%;
-}
-
 input[type="checkbox"],
 input[type="radio"] {
     margin-right: 5px;
@@ -204,6 +204,32 @@ input[type="radio"] {
 }
 
 .form_actions button:hover {
+    background-color: gray;
+}
+
+.custom-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.custom-notification button {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.custom-notification button:hover {
     background-color: gray;
 }
 
