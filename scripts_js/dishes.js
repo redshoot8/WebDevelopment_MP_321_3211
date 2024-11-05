@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     text = 'Ничего не выбрано. Выберите блюда для заказа'
                 } else if (!(dishes.includes('напиток')) && dishes.length > 0) {
                     text = 'Выберите напиток';
-                } else if (dishes.includes('напиток') || !(selectedItems['десерт'] === null)) {
+                } else if ((dishes.includes('напиток') || !(selectedItems['десерт'] === null) && !dishes.includes('главное блюдо'))) {
                     text = 'Выберите главное блюдо';
                 }
 
