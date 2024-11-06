@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     text = 'Ничего не выбрано. Выберите блюда для заказа'
                 } else if (!(dishes.includes('напиток')) && dishes.length > 0) {
                     text = 'Выберите напиток';
-                } else if ((dishes.includes('напиток') || !(selectedItems['десерт'] === null) && !dishes.includes('главное блюдо'))) {
+                } else if ((dishes.includes('напиток') || !(selectedItems['десерт'] === null))) {
                     text = 'Выберите главное блюдо';
                 }
 
@@ -272,10 +272,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     text = 'Выберите суп или главное блюдо';
                 }
 
-                for (const combo in combos) {
-                    if (dishes === combo.items) {
-                        return {valid: true, message: 'Все блюда успешно выбраны'};
+                let result;
+                combos.forEach( function (combo) {
+                    if (JSON.stringify(dishes) === JSON.stringify(combo.items)) {
+                        result = {valid: true, message: 'Все блюда успешно выбраны'};
                     }
+                });
+                if (result) {
+                    return result;
                 }
                 return {valid: false, message: text};
             }
@@ -283,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('form').addEventListener('submit', function (event) {
                 const result = validateOrder(selectedDishes);
                 if (!result.valid) {
+                    console.log(result);
                     event.preventDefault();
                     displayNotification(result.message);
                 }
