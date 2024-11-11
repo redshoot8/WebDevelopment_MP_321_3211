@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('dishes.json')
+    fetch('http://lab7-api.std-900.ist.mospolytech.ru/api/dishes')
         .then(response => response.json())
         .then(data => {
             // Сортировка блюд
-            const sortedDishes = data['dishes'].sort((a, b) => {
+            const sortedDishes = data.sort((a, b) => {
                 return a['name'].localeCompare(b['name'], 'ru');
             });
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.dataset.kind = dish['kind'];
 
                 const img = document.createElement('img');
-                img.src = dish['image'];
+                img.src = 'images/' + dish['image'] + '.png';
                 img.alt = dish['name'];
 
                 const price = document.createElement('p');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const volume = document.createElement('p');
                 volume.classList.add('volume');
-                volume.textContent = dish['volume'];
+                volume.textContent = dish['count'];
 
                 const buttonDiv = document.createElement('div');
                 const button = document.createElement('button');
@@ -55,8 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             function populateCards(sectionElement, category) {
+                const categoryCompare = {
+                    'soup': 'суп',
+                    'main-course': 'главное блюдо',
+                    'salad': 'салат',
+                    'drink': 'напиток',
+                    'dessert': 'десерт'
+                }
+
                 sortedDishes.forEach(dish => {
-                    if (dish['category'] === category) {
+                    if (categoryCompare[dish['category']] === category) {
                         const card = createCard(dish);
                         sectionElement.appendChild(card);
                     }
@@ -65,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             populateCards(soupSection, 'суп');
             populateCards(mainDishSection, 'главное блюдо');
-            populateCards(drinkSection, 'напиток');
             populateCards(saladSection, 'салат');
+            populateCards(drinkSection, 'напиток');
             populateCards(dessertSection, 'десерт');
 
             // Добавление товаров в заказ и подсчет цены
