@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://lab7-api.std-900.ist.mospolytech.ru/api/dishes')
+    fetch('https://edu.std-900.ist.mospolytech.ru/labs/api/dishes')
         .then(response => response.json())
         .then(data => {
             // Сортировка блюд
