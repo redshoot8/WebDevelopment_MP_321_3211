@@ -117,19 +117,21 @@ document.addEventListener('DOMContentLoaded', () => {
             function addToOrder(dish) {
                 let isUpdated = false;
 
-                if (dish['category'] === 'суп') {
+                console.log(dish);
+
+                if (dish['category'] === 'soup') {
                     updateCategory('суп', dish, chosenSoup, soupLabel);
                     isUpdated = true;
-                } else if (dish['category'] === 'главное блюдо') {
+                } else if (dish['category'] === 'main-course') {
                     updateCategory('главное блюдо', dish, chosenMain, mainLabel);
                     isUpdated = true;
-                } else if (dish['category'] === 'напиток') {
+                } else if (dish['category'] === 'drink') {
                     updateCategory('напиток', dish, chosenDrink, drinkLabel);
                     isUpdated = true;
-                } else if (dish['category'] === 'салат') {
+                } else if (dish['category'] === 'salad') {
                     updateCategory('салат', dish, chosenSalad, saladLabel);
                     isUpdated = true;
-                } else if (dish['category'] === 'десерт') {
+                } else if (dish['category'] === 'dessert') {
                     updateCategory('десерт', dish, chosenDessert, dessertLabel);
                     isUpdated = true;
                 }
