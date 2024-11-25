@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Construct</title>
+
+    <!-- Подключаем шрифт с Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Подключаем внешние файлы стилей -->
+    <link rel="stylesheet" href="styles/main_styles.css">
+    <link rel="stylesheet" href="styles/dishes_styles.css">
+
+    <!-- Подключаем скрипты -->
+    <script src="scripts_js/make_order.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">О нас</a></li>
+                <li><a href="dishes.html">Собрать ланч</a></li>
+                <li><a id="active" href="#">Оформить заказ</a></li>
+                <li><a href="#">Заказы</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="selected_dishes">
+            <h2>Состав заказа</h2>
+            <div class="dish_block">
+                <p class="nothing_selected">Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу
+                <a class="link" href="dishes.html">"Собрать ланч"</a>.</p>
+            </div>
+        </section>
+
+        <section id="order_form">
+            <h2>Сделать заказ</h2>
+            <form class="order_form">
+                <div class="order_section">
+                    <p>Ваш заказ</p>
+                    <p class="nothing_selected"><b>Ничего не выбрано</b></p>
+
+                    <p id="soup_label"><b>Суп</b></p>
+                    <p id="chosen_soup">Блюдо не выбрано</p>
+
+                    <p id="main_label"><b>Главное блюдо</b></p>
+                    <p id="chosen_main">Блюдо не выбрано</p>
+
+                    <p id="salad_label"><b>Салат</b></p>
+                    <p id="chosen_salad">Блюдо не выбрано</p>
+
+                    <p id="drink_label"><b>Напиток</b></p>
+                    <p id="chosen_drink">Блюдо не выбрано</p>
+
+                    <p id="dessert_label"><b>Десерт</b></p>
+                    <p id="chosen_dessert">Блюдо не выбрано</p>
+
+                    <p id="total_price">Стоимость заказа: 0₽</p>
+
+                    <label for="comments">Комментарии к заказу</label>
+                    <textarea id="comments" rows="8"></textarea>
+                </div>
+
+                <div class="order_section">
+                    <p>Ваши данные</p>
+
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <div class="subscribe_checkbox">
+                        <input type="checkbox" id="subscribe" name="subscribe" checked>
+                        <label for="subscribe">Получать информацию о скидках и акциях</label>
+                    </div>
+
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="address">Адрес доставки</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <p class="note"><i>Доставка осуществляется только по Москве</i></p>
+
+                    <p>Время доставки:</p>
+                    <label><input type="radio" value="asap" name="time-type" required> Как можно скорее</label>
+                    <label><input type="radio" value="specific" name="time-type" required> К указанному времени</label>
+
+                    <label for="delivery-time">Укажите время доставки</label>
+                    <input type="time" id="delivery-time" name="time" min="07:00" max="23:00" step="300">
+
+                    <p class="note">Доступное время доставки с 7:00 до 23:00</p>
+
+                    <div class="form_actions">
+                        <button type="reset">Сбросить</button>
+                        <button type="submit">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <div id="notification" class="custom-notification"></div>
+    </main>
+
+    <footer id="contact">
+        <p>Позвонить нам +7-000-000-00-00</p>
+    </footer>
+</body>
+</html>

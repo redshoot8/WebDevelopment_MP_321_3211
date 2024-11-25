@@ -75,6 +75,11 @@ img {
     height: auto;
 }
 
+.link {
+    color: tomato;
+    text-decoration: none;
+}
+
 #active {
     color: tomato;
 }

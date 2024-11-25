@@ -23,6 +23,7 @@
             <ul>
                 <li><a href="index.html">О нас</a></li>
                 <li><a id="active" href="#">Собрать ланч</a></li>
+                <li><a href="make_order.html">Оформить заказ</a></li>
                 <li><a href="#">Заказы</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
@@ -199,74 +200,11 @@
             <div class="dish_block"></div>
         </section>
 
-        <section id="order_form">
-            <h2>Сделать заказ</h2>
-            <form class="order_form" action="https://httpbin.org/post" method="POST">
-                <div class="order_section">
-                    <p>Ваш заказ</p>
-                    <p><b>Ничего не выбрано</b></p>
-
-                    <p id="soup_label"><b>Суп</b></p>
-                    <p id="chosen_soup">Блюдо не выбрано</p>
-
-                    <p id="main_label"><b>Главное блюдо</b></p>
-                    <p id="chosen_main">Блюдо не выбрано</p>
-
-                    <p id="salad_label"><b>Салат</b></p>
-                    <p id="chosen_salad">Блюдо не выбрано</p>
-
-                    <p id="drink_label"><b>Напиток</b></p>
-                    <p id="chosen_drink">Блюдо не выбрано</p>
-
-                    <p id="dessert_label"><b>Десерт</b></p>
-                    <p id="chosen_dessert">Блюдо не выбрано</p>
-
-                    <p id="total_price">Стоимость заказа: 0₽</p>
-
-                    <label for="comments">Комментарии к заказу</label>
-                    <textarea id="comments" rows="8"></textarea>
-                </div>
-
-                <div class="order_section">
-                    <p>Ваши данные</p>
-
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <div class="subscribe_checkbox">
-                        <input type="checkbox" id="subscribe" name="subscribe" checked>
-                        <label for="subscribe">Получать информацию о скидках и акциях</label>
-                    </div>
-
-                    <label for="phone">Номер телефона</label>
-                    <input type="tel" id="phone" name="phone" required>
-
-                    <label for="address">Адрес доставки</label>
-                    <input type="text" id="address" name="address" required>
-
-                    <p class="note"><i>Доставка осуществляется только по Москве</i></p>
-
-                    <p>Время доставки:</p>
-                    <label><input type="radio" value="asap" name="time-type" required> Как можно скорее</label>
-                    <label><input type="radio" value="specific" name="time-type" required> К указанному времени</label>
-
-                    <label for="delivery-time">Укажите время доставки</label>
-                    <input type="time" id="delivery-time" name="time" min="07:00" max="23:00" step="300">
-
-                    <p class="note">Доступное время доставки с 7:00 до 23:00</p>
-
-                    <div class="form_actions">
-                        <button type="reset">Сбросить</button>
-                        <button type="submit">Отправить</button>
-                    </div>
-                </div>
-            </form>
+        <section id="order_info">
+            <h2>Перейти к оформлению</h2>
+            <p id="total_price">Стоимость заказа: 0₽</p>
+            <p id="order_message">Чтобы оформить заказ перейдите на страницу <a class="link" href="make_order.html">"Заказы"</a></p>
         </section>
-
-        <div id="notification" class="custom-notification"></div>
     </main>
 
     <!-- Футер -->
