@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 let result;
                 combos.forEach( function (combo) {
+                    console.log(dishes, combo.items)
                     if (JSON.stringify(dishes) === JSON.stringify(combo.items)) {
                         result = {valid: true, message: 'Все блюда успешно выбраны'};
                     }
