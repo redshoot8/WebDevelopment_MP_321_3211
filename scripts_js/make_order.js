@@ -299,25 +299,26 @@ document.addEventListener('DOMContentLoaded', () => {
                         delivery_type = 'now';
                     }
 
-                    let subscribe = false;
-                    if (document.getElementById('subscribe').value === 'on') {
-                        subscribe = true;
+                    const delivery_time = document.getElementById('delivery-time').value;
+
+                    const localStorageIds = {
+                        'soup_id': window.localStorage.getItem('selected_soup'),
+                        'main_course_id': window.localStorage.getItem('selected_main-course'),
+                        'salad_id': window.localStorage.getItem('selected_salad'),
+                        'drink_id': window.localStorage.getItem('selected_drink'),
+                        'dessert_id': window.localStorage.getItem('selected_dessert')
                     }
 
-                    const formData = new FormData();
-                    formData.append('full_name', document.getElementById('name').value);
-                    formData.append('email', document.getElementById('email').value);
-                    formData.append('subscribe', subscribe);
-                    formData.append('phone', document.getElementById('phone').value);
+                    const form = document.querySelector('#order_form .order_form');
+                    const formData = new FormData(form);
                     formData.append('delivery_address', document.getElementById('address').value);
                     formData.append('delivery_type', delivery_type);
-                    formData.append('delivery_time', document.getElementById('delivery-time').value);
-                    formData.append('comment', document.getElementById('comments').value);
-                    formData.append('soup_id', Number(window.localStorage.getItem('selected_soup')));
-                    formData.append('main_course_id', Number(window.localStorage.getItem('selected_main-course')));
-                    formData.append('salad_id', Number(window.localStorage.getItem('selected_salad')));
-                    formData.append('drink_id', Number(window.localStorage.getItem('selected_drink')));
-                    formData.append('dessert_id', Number(window.localStorage.getItem('selected_dessert')));
+                    formData.append('delivery_time', delivery_time !== '' ? delivery_time : '12:00:00');
+                    if (localStorageIds['soup_id'] !== null) {formData.append('soup_id', localStorageIds['soup_id']);}
+                    if (localStorageIds['main_course_id'] !== null) {formData.append('main_course_id', localStorageIds['main_course_id']);}
+                    if (localStorageIds['salad_id'] !== null) {formData.append('salad_id', localStorageIds['salad_id']);}
+                    if (localStorageIds['drink_id'] !== null) {formData.append('drink_id', localStorageIds['drink_id']);}
+                    if (localStorageIds['dessert_id'] !== null) {formData.append('dessert_id', localStorageIds['dessert_id']);}
 
                     for (let pair of formData.entries()) {
                         console.log(pair[0]+ ', ' + pair[1] + ', ' + typeof pair[1]);
@@ -326,28 +327,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     fetch('https://edu.std-900.ist.mospolytech.ru/labs/api/orders?api_key=b82a7396-638e-4eef-82fc-1f759b30701b', {
                         method: 'POST',
                         body: formData,
-                        headers: {
-                            'Content-Type': 'multipart/form-data'
-                        }
                     })
                         .then((response) => response.json())
                         .then((data) => {
                             if (data['error']) {
                                 displayNotification(data['error']);
                             } else {
-                                console.log(data);
                                 window.localStorage.removeItem('selected_soup');
                                 window.localStorage.removeItem('selected_main-course');
                                 window.localStorage.removeItem('selected_salad');
                                 window.localStorage.removeItem('selected_drink');
                                 window.localStorage.removeItem('selected_dessert');
                                 displayNotification('Заказ оформлен!');
+                                setTimeout(() => {location.reload();}, 3000);
                             }
                         })
                         .catch((error) => {
                             displayNotification(error);
                         })
-
                 }
             });
 
