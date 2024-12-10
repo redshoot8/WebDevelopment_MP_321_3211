@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const formData = new FormData(form);
                     formData.append('delivery_address', document.getElementById('address').value);
                     formData.append('delivery_type', delivery_type);
-                    formData.append('delivery_time', delivery_time !== '' ? delivery_time : '12:00:00');
+                    if (delivery_time !== '') {formData.append('delivery_time', delivery_time);}
                     if (localStorageIds['soup_id'] !== null) {formData.append('soup_id', localStorageIds['soup_id']);}
                     if (localStorageIds['main_course_id'] !== null) {formData.append('main_course_id', localStorageIds['main_course_id']);}
                     if (localStorageIds['salad_id'] !== null) {formData.append('salad_id', localStorageIds['salad_id']);}
