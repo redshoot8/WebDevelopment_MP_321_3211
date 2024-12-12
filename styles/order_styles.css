@@ -49,6 +49,12 @@
     overflow-y: auto;
 }
 
+.order_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .modal-header {
     display: flex;
     justify-content: space-between;
