@@ -24,7 +24,7 @@ async function fillTable(table, products, orders) {
 async function pushToTable(table, number, order, products) {
     let selectedProductsNames = '';
     let orderPrice = 0;
-    let deliveryPrice = 0;
+    let deliveryPrice = 200;
 
     products.forEach((product) => {
         if (order.good_ids.includes(product.id)) {
@@ -109,7 +109,7 @@ function formatDate(dateString) {
 async function readOrder(products, order) {
     let selectedProductsNames = '';
     let orderPrice = 0;
-    let deliveryPrice = 0;
+    let deliveryPrice = 200;
 
     products.forEach((product) => {
         if (order.good_ids.includes(product.id)) {
@@ -175,7 +175,7 @@ async function readOrder(products, order) {
 async function editOrder(products, order) {
     let selectedProductsNames = '';
     let orderPrice = 0;
-    let deliveryPrice = 0;
+    let deliveryPrice = 200;
 
     products.forEach((product) => {
         if (order.good_ids.includes(product.id)) {
