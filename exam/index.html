@@ -3,148 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #8bc34a;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        h1 {
-            margin: 0;
-            color: white;
-        }
-        .search-bar {
-            flex-grow: 1;
-            margin: 0 20px;
-        }
-        .search-bar input {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-        .sidebar {
-            width: 250px;
-            background: white;
-            padding: 20px;
-            border-right: 1px solid #ccc;
-            position: fixed;
-            height: 100%;
-        }
-        .sidebar h2 {
-            margin-top: 0;
-        }
-        .product-container {
-            margin-left: 270px;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .product-card {
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            width: 200px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .product-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-        .product-title {
-            font-weight: bold;
-            margin: 0;
-        }
-        .product-price {
-            color: #e91e63;
-            font-size: 16px;
-        }
-        .discount {
-            color: red;
-            text-decoration: line-through;
-        }
-        .add-button {
-            background-color: #8bc34a;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 5px;
-        }
-        .load-more {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #f1f1f1;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/index.css" rel="stylesheet">
+    <link rel="shortcut icon" href="icons/logo.svg">
+    <title>Главная страница</title>
+    <script src="scripts_js/index.js"></script>
 </head>
 <body>
     <header>
-        <h1>Logo</h1>
+        <a href="index.html"><img class="logo" src="icons/logo.svg" alt=""></a>
         <div class="search-bar">
-            <input type="text" placeholder="Введите запрос">
+            <input id="search" type="text" placeholder="Введите запрос">
+            <button><img src="icons/search.svg" alt=""></button>
         </div>
-        <button>🛒</button>
-        <button>👤</button>
+        <div class="menu-items">
+            <a href="orders.html"><img src="icons/user.svg" alt=""></a>
+            <a href="cart.html"><img src="icons/cart.svg" alt=""></a>
+        </div>
     </header>
 
-    <div class="sidebar">
-        <h2>Категории</h2>
-        <label><input type="checkbox"> Категория 1</label><br>
-        <label><input type="checkbox"> Категория 2</label><br>
-        <label><input type="checkbox"> Категория 3</label><br>
-        <label><input type="checkbox"> Категория 4</label><br>
-        <label><input type="checkbox"> Категория 5</label><br>
-        <h2>Стоимость</h2>
-        <input type="range" min="100" max="5000" id="priceRange">
-        <button>Применить</button>
-    </div>
-
-    <div class="product-container">
-        <div class="product-card">
-            <img src="https://placehold.co/200x150" alt="Изображение товара">
-            <p class="product-title">Название товара</p>
-            <p class="rating">4,1 ★★★★☆</p>
-            <p class="product-price">2000 ₽ <span class="discount">3000 ₽</span> -33%</p>
-            <button class="add-button">Добавить</button>
+    <div id="notification-container"></div>
+    <section>
+        <div class="sidebar">
+            <h2>Категории</h2>
+            <label><input type="checkbox">Дом & Кухня</label>
+            <label><input type="checkbox">ТВ, аудио & камеры</label>
+            <label><input type="checkbox">Спорт & фитнес</label>
+            <label><input type="checkbox">Красота & здоровье</label>
+            <h2>Стоимость</h2>
+            <label>От <input type="number" id="price-start"> ₽</label>
+            <label>До <input type="number" id="price-end"> ₽</label>
+            <button>Применить</button>
         </div>
-        <div class="product-card">
-            <img src="https://placehold.co/200x150" alt="Изображение товара">
-            <p class="product-title">Название товара</p>
-            <p class="rating">4,0 ★★★★☆</p>
-            <p class="product-price">2000 ₽ <span class="discount">3000 ₽</span> -33%</p>
-            <button class="add-button">Добавить</button>
+
+        <div class="container">
+            <div id="header-and-sort">
+                <h2>Каталог</h2>
+                <select id="sort_order">
+                    <option id="rating_asc" value="rating_asc">По возрастанию рейтинга</option>
+                    <option id="rating_desc" value="rating_desc" selected="selected">По убыванию рейтинга</option>
+                    <option id="price_asc" value="price_asc">По возрастанию цены</option>
+                    <option id="price_desc" value="price_desc">По убыванию цены</option>
+                </select>
+            </div>
+            <div class="product-container"></div>
+            <div id="pages-container"></div>
         </div>
-        <!-- Добавьте больше карточек по аналогии -->
-    </div>
+    </section>
 
-    <div class="load-more">
-        <button>Загрузить ещё</button>
-    </div>
-
-    <footer class="footer">
-        <p>&copy; 2025 Название компании</p>
+    <footer>
+        <p>&copy; 2025 ExamShop. Все права защищены.</p>
+        <p>Напишите нам: info@examshop.com</p>
     </footer>
 </body>
 </html>
