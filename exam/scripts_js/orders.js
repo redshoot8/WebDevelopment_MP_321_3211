@@ -113,7 +113,7 @@ async function readOrder(products, order) {
 
     products.forEach((product) => {
         if (order.good_ids.includes(product.id)) {
-            selectedProductsNames += selectedProductsNames.length === 0 ? product.name : '?' + product.name;
+            selectedProductsNames += selectedProductsNames.length === 0 ? product.name : ', ' + product.name;
             orderPrice += product.discount_price ? product.discount_price : product.actual_price;
         }
     });
@@ -179,7 +179,7 @@ async function editOrder(products, order) {
 
     products.forEach((product) => {
         if (order.good_ids.includes(product.id)) {
-            selectedProductsNames += selectedProductsNames.length === 0 ? product.name : '?' + product.name;
+            selectedProductsNames += selectedProductsNames.length === 0 ? product.name : ', ' + product.name;
             orderPrice += product.discount_price ? product.discount_price : product.actual_price;
         }
     });
